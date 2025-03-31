@@ -1,0 +1,681 @@
+.product-details {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+
+.product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* Images Section */
+.product-images {
+  position: sticky;
+  top: 20px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.image-item {
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-item.active {
+  border: 2px solid #000;
+}
+
+/* Product Info Section */
+.product-info {
+  padding-right: 20px;
+}
+
+.brand-title {
+  margin-bottom: 16px;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Rating */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  color: #ddd;
+}
+
+.star.filled {
+  color: #ffd700;
+  fill: #e4c306;
+}
+
+.rating-count {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Price Section */
+.price-section {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.current-price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #666;
+}
+
+
+/* Size Selection */
+.size-section {
+  margin-bottom: 24px;
+}
+
+.size-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.size-guide {
+  background: none;
+  border: none;
+  color: #666;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.size-options {
+  display: flex;
+  gap: 12px;
+}
+
+.size-btn {
+  width: 56px;
+  height: 56px;
+  border: 2px solid #ddd;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.size-btn:hover {
+  border-color: #000;
+}
+
+.size-btn.selected {
+  background: #000;
+  color: white;
+  border-color: #000;
+}
+
+/* Quantity Section */
+.quantity-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+}
+
+.quantity-selector button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.quantity-selector button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quantity-selector span {
+  /* width: 48px; */
+  text-align: center;
+}
+
+/* Delivery Check */
+.delivery-check {
+  margin-bottom: 24px;
+}
+
+.pincode-input {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.pincode-input input {
+  flex: 1;
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  font-size: 16px;
+}
+
+.pincode-input input:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.pincode-input button {
+  padding: 12px 24px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.pincode-input button:hover {
+  background: #007cff;
+}
+
+
+.delivery-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #00a100;
+  font-size: 14px;
+}
+
+/* Action Buttons */
+.actions {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.add-to-bag {
+  padding: 16px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+/* .add-to-bag:hover {
+  background: #007cff;
+} */
+
+.wishlist {
+  padding: 16px;
+  background: white;
+  border: 2px solid #000;
+  border-radius: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.wishlist:hover {
+  background: #f5f5f5;
+}
+
+.share-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 24px;
+}
+
+.share-button:hover {
+  color: #000;
+}
+
+/* Product Details Section */
+.product-details-section {
+  border-top: 1px solid #eee;
+  padding-top: 24px;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  padding: 12px 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-weight: 500;
+  color: #666;
+}
+
+.tab-btn.active {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+.tab-content {
+  color: #666;
+  line-height: 1.6;
+}
+
+.details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.details li {
+  margin-bottom: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .product-container {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+
+  .product-images {
+    position: static;
+  }
+
+  .actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    z-index: 100;
+  }
+
+  .product-info {
+    padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-details {
+    padding: 10px;
+  }
+
+  .size-options {
+    flex-wrap: wrap;
+  }
+
+  .actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+/* ohhkflkshnfgs */
+
+.product-gallery {
+  display: flex;
+  gap: 20px;
+  position: sticky;
+  top: 20px;
+}
+
+.thumbnails-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  overflow: hidden;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail.active {
+  border-color: #000;
+}
+
+.main-image-container {
+  flex: 1;
+  position: relative;
+  
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  cursor: zoom-in;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+
+.zoom-hint {
+  /* position: absolute; */
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Image Modal */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90vh;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+/* Modified Action Buttons */
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.buy-now {
+  padding: 16px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.add-to-bag {
+  padding: 16px;
+  background: #fff;
+  color: #007cff;
+  border: 1px solid #007cff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.wishlist-button {
+  width: 100%;
+  padding: 16px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: all 0.2s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-gallery {
+    flex-direction: column;
+  }
+
+  .thumbnails-container {
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .thumbnail {
+    flex-shrink: 0;
+  }
+}
+
+/* Add these to your existing CSS */
+
+.quantity-selector {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.quantity-btn {
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quantity {
+  padding: 0 15px;
+  min-width: 40px;
+  text-align: center;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+/* Enhance existing button styles */
+.actions {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.buy-now,
+.add-to-bag {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buy-now {
+  /* background-color: #ff3e6c; */
+  color: white;
+}
+
+.buy-now:hover {
+  background: #007cff;
+}
+
+.add-to-bag {
+  background-color: #fff;
+  color: black;
+  border: 1px solid black;
+}
+
+.add-to-bag:hover {
+  color: #007cff;
+  border: 1px solid #007cff;
+}
+
+/* for video */
+
+.video-thumbnail {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.play-button {
+  width: 40px;
+  height: 40px;
+}
+
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.video-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.video-container {
+  position: relative;
+  background: #000;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.video-container video {
+  width: 90vw;
+  max-width: 600px;
+}
+
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+}

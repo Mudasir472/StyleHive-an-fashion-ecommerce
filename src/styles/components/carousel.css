@@ -1,0 +1,226 @@
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 2vw; /* Using vw for responsive border-radius */
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Using vh instead of fixed height */
+    max-height: 600px; /* Maximum height on larger screens */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    position: relative;
+    height: 100%;
+    border-radius: 2vw; /* Using vw for responsive border-radius */
+    overflow: hidden;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2vw;
+}
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: white;
+    text-shadow: 0 0.2vw 0.4vw rgba(0,0,0,0.1);
+    z-index: 2;
+    width: 80%; /* Control content width */
+}
+
+.slide-title {
+    font-size: clamp(1.5rem, 4vw, 3rem); /* Responsive font size */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.5s forwards;
+}
+
+.slide-description {
+    font-size: clamp(1rem, 2vw, 1.5rem); /* Responsive font size */
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.5s 0.2s forwards;
+}
+
+.slide-button {
+    display: inline-block;
+    padding: clamp(0.5rem, 1.5vw, 12px) clamp(1rem, 3vw, 30px); /* Responsive padding */
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.5s 0.4s forwards;
+    font-size: clamp(0.875rem, 1.2vw, 1rem); /* Responsive font size */
+}
+
+.slide-button:hover {
+    background-color: black;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Navigation Buttons */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: clamp(8px, 1vw, 10px);
+    font-size: clamp(1rem, 2vw, 24px); /* Responsive font size */
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: clamp(32px, 5vw, 40px); /* Responsive width */
+    height: clamp(32px, 5vw, 40px); /* Responsive height */
+    transition: background 0.3s ease;
+}
+
+.carousel-nav:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-nav.prev {
+    left: 3vw;
+}
+
+.carousel-nav.next {
+    right: 3vw;
+}
+
+/* Progress Bars */
+.carousel-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    z-index: 3;
+}
+
+.progress-bar {
+    height: 0.4vh;
+    min-height: 3px;
+    flex: 1;
+    padding: 6px!important;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0 2px;
+}
+
+.progress-bar.active {
+    background: white;
+    animation: progress 5s linear;
+}
+
+/* Indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: 3vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: clamp(6px, 1vw, 10px);
+    z-index: 2;
+}
+
+.indicator {
+    width: clamp(8px, 1vw, 10px);
+    height: clamp(8px, 1vw, 10px);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes progress {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .carousel {
+        height: 50vh; /* Smaller height on mobile */
+    }
+    
+    .slide-content {
+        left: 5%;
+        width: 90%;
+    }
+}
+
+/* Small Mobile Adjustments */
+@media (max-width: 480px) {
+    .carousel {
+        height: 40vh;
+    }
+    
+    .carousel-nav {
+        width: clamp(28px, 8vw, 32px);
+        height: clamp(28px, 8vw, 32px);
+    }
+    
+    .carousel-nav.prev {
+        left: 2vw;
+    }
+    
+    .carousel-nav.next {
+        right: 2vw;
+    }
+}
+
+/* For very tall/narrow screens (like iPhone in portrait) */
+@media (max-aspect-ratio: 2/3) {
+    .carousel {
+        height: 35vh;
+    }
+}
+
+/* For landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .carousel {
+        height: 70vh;
+    }
+}

@@ -1,0 +1,30 @@
+.home-page {
+    width: 100%;
+  }
+  
+  .home-banner {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .home-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+  }
+
+  .shop-heading {
+    text-align: center;
+    font-family: 'Brush Script MT', cursive;
+    color: #007bff;
+    font-size: 3rem;
+  }
+  
