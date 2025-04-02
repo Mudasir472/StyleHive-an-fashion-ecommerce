@@ -12,7 +12,7 @@ const ProductStories = () => {
   const [allStories, setAllStories] = useState([]);
   // fetch all stories
   const fetchStories = async (req, res) => {
-    const resp = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/stories/`);
+    const resp = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/stories`,{withCredentials:true});
     setAllStories(resp?.data?.data);
   }
   useEffect(() => {

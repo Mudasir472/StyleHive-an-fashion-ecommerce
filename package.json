@@ -2,7 +2,7 @@
   "name": "ubinbaas",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
+  "proxy": "https://admin.ubindass.in",
   "dependencies": {
     "@fontsource/poppins": "^5.1.1",
     "@tailwindcss/vite": "^4.0.12",
